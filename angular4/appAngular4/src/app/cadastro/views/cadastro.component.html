@@ -3,9 +3,14 @@
     <hr/>
     <div class="row">
         <div class="col-md-6">
+            <div class="form-group">
+                <label for="codigo">Informe a descrição para filtrar:</label>
+                <input type="text" #busca (keyup)="0" class="form-control">
+            </div>
+
             <ul class="list_group">
-                <li *ngFor="let item of listaEventos" class="list-group-item" (click)="selecionar(item)">
-                    <a [class.selecionado]="item === eventoSelecionado" [routerLink]="['/eventos']">{{item.descricao}}</a>
+                <li *ngFor="let item of listaEventos | sublista:busca.value" class="list-group-item" (click)="selecionar(item)">
+                    <a [class.selecionado]="item === eventoSelecionado" [routerLink]="['/eventos']">{{item.descricao | uppercase}}</a>
                 </li>
             </ul>
             <button type="button" (click)="novo()" class="btn btn-info">

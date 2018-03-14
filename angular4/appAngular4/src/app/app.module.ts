@@ -8,6 +8,7 @@ import { appRoutes } from './rotas/app.routes'; //deve vir primeiro que os compo
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { SubLista } from './filters/sublista.filter'; 
 
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -19,7 +20,8 @@ import { EventosService } from './services/eventos.service';
   declarations: [AppComponent,
     MenuComponent, HomeComponent,
     CadastroComponent,
-    NotFoundComponent],
+    NotFoundComponent,
+    SubLista],
   providers: [EventosService],
   bootstrap: [AppComponent]
 })
